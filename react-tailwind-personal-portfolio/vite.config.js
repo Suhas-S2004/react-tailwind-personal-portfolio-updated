@@ -11,5 +11,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: import.meta.env.VITE_BASE_PATH || "/react-tailwind-personal-portfolio-updated",
+  base: process.env.VITE_BASE_PATH || "/react-tailwind-personal-portfolio-updated",
 });
