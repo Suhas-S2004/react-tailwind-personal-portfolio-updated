@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+  --color-background: #0b0f17;
+  --color-foreground: #f1f5f9;
 
-  --color-card: #141a1f;
+  --color-card: #111827;
 
-  --color-primary: #20b2a6;
+  --color-primary: #38bdf8;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #38bdf8;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
 
-  --color-border: #242b32;
+  --color-border: #334155;
 
   --radius: 0.75rem;
 
   --color-highlight: #f5a623;
-  --color-surface: #1a2329;
+  --color-surface: #131c2e;
 }
 
 @layer base {
@@ -118,7 +118,7 @@
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out both;
+    animation: fade-in 0.3s ease-out both;
   }
 
   .animate-float {
@@ -126,12 +126,12 @@
   }
 
   .animate-marquee-mobile {
-  animation: marquee 1s linear infinite;
-}
+    animation: marquee 1s linear infinite;
+  }
 
-.animate-marquee-desktop {
-  animation: marquee 1s linear infinite;
-}
+  .animate-marquee-desktop {
+    animation: marquee 1s linear infinite;
+  }
 
   .animation-delay-100 {
     animation-delay: 100ms;
@@ -175,9 +175,9 @@
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    background-color: color-mix(in srgb, #38bdf8 15%, transparent);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+    box-shadow: 0 0 20px color-mix(in srgb, #38bdf8 20%, transparent);
   }
 
   .timeline-glow {

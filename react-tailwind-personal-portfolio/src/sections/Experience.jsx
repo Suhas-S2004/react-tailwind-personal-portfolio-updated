@@ -73,14 +73,14 @@ export const Experience = () => {
                 {/* Content */}
                 <div className="pl-10">
                   <div
-                    className={`glass p-6 sm:p-8 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 relative`}
+                    className={`glass p-6 sm:p-8 rounded-2xl border border-white/10 dark:border-slate-800 hover:border-primary/50 transition-all duration-300 relative shadow-xl backdrop-blur-md bg-white/5 dark:bg-slate-900/30`}
                   >
                     {exp.certificateLink && (
                       <a
                         href={exp.certificateLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-4 right-4 p-2 rounded-full bg-surface hover:bg-primary/20 border border-primary/30 hover:border-primary/60 transition-all duration-300 group z-20"
+                        className="absolute top-4 right-4 p-2 rounded-full backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 group z-20 shadow-md"
                         aria-label="View certificate"
                       >
                         <ArrowUpRight className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
@@ -90,16 +90,16 @@ export const Experience = () => {
                       {exp.period}
                     </span>
 
-                    <p className="text-xl font-bold mt-1">{exp.company}</p>
-                    <h3 className="text-foreground font-semibold mt-2">{exp.role}</h3>
-                    <p className="text-sm text-muted-foreground mt-4">
+                    <p className="text-xl font-bold mt-1 text-foreground">{exp.company}</p>
+                    <h3 className="text-foreground/90 font-semibold mt-2">{exp.role}</h3>
+                    <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
                       {exp.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mt-4">
                       {exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
-                          className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                          className="px-3 py-1 bg-white/10 dark:bg-slate-800/50 border border-white/10 text-xs rounded-full text-muted-foreground backdrop-blur-sm"
                         >
                           {tech}
                         </span>
