@@ -17,6 +17,10 @@ const skillCategories = [
     skills: ["React.js", "Tailwind CSS"],
   },
   {
+    title: "DESIGN & TOOLS",
+    skills: ["Figma", "Canva"],
+  },
+  {
     title: "BACKEND",
     skills: ["Node.js", "Express.js", "REST APIs"],
   },
@@ -32,10 +36,7 @@ const skillCategories = [
     title: "TOOLS & VERSION CONTROL",
     skills: ["Git", "GitHub"],
   },
-  {
-    title: "DESIGN & TOOLS",
-    skills: ["Figma", "Canva"],
-  },
+  
 ];
 
 export const Hero = () => {

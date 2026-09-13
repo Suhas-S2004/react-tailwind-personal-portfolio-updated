@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
     title: "AI-Powered Mock Interview Platform",
@@ -62,7 +63,7 @@ export const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 flex flex-col"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image */}
@@ -70,19 +71,46 @@ export const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 scale-110 group-hover:scale-100 md:group-hover:scale-110"
                 />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to from-card via-card/50
-                 to-transparent opacity-60"
-                />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                
+                {/* Always-visible top-right quick action buttons for mobile */}
+                <div className="absolute top-3 right-3 flex items-center gap-2 md:hidden z-20">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="View live project"
+                    className="p-2.5 rounded-full glass bg-black/60 text-white border border-white/20 shadow-md"
+                  >
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View GitHub repository"
+                      className="p-2.5 rounded-full glass bg-black/60 text-white border border-white/20 shadow-md"
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+
+                <div
+                  className="absolute inset-0 
+                bg-gradient-to from-card via-card/50
+                  to-transparent opacity-60"
+                />
+
+                {/* Desktop Overlay Links */}
+                <div className="absolute inset-0 hidden md:flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View live project"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <ArrowUpRight className="w-5 h-5" />
@@ -92,6 +120,7 @@ export const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="View GitHub repository"
                       className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                     >
                       <Github className="w-5 h-5" />
@@ -101,22 +130,24 @@ export const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight
+                      className="w-5 h-5 
+                    text-muted-foreground group-hover:text-primary
+                      group-hover:translate-x-1 
+                      group-hover:-translate-y-1 transition-all"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm mt-2">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
