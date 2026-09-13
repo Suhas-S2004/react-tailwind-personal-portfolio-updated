@@ -28,7 +28,7 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[60vh] py-16 flex flex-col justify-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
         <img
@@ -43,6 +43,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
@@ -58,10 +59,10 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 pt-16 pb-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -71,9 +72,8 @@ export const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Suhas S — a Computer Science undergraduate specializing
+                Hi, I'm <span className="text-primary font-medium">Suhas S</span> — a Computer Science undergraduate specializing
                 in full-stack web development and exploring AI/ML. I build
                 practical, user-friendly applications with efficient data
                 handling.
@@ -119,6 +119,8 @@ export const Hero = () => {
                 <a
                   key={idx}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -165,8 +167,8 @@ export const Hero = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
+        <div className="mt-12 animate-fade-in animation-delay-600">
+          <p className="text-sm text-foreground mb-6 text-center">
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
@@ -178,7 +180,7 @@ export const Hero = () => {
               className="absolute right-0 top-0 bottom-0 w-32
              bg-gradient-to-l from-background to-transparent z-10"
             />
-            <div className="flex animate-marquee">
+            <div className="flex animate-marquee" style={{ animationDuration: "9s" }}>
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
@@ -192,15 +194,15 @@ export const Hero = () => {
       </div>
 
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 
       animate-fade-in animation-delay-800"
       >
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+          className="flex flex-col items-center gap-2 text-foreground hover:text-primary transition-colors group"
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
+          {/*<span className="text-xs uppercase tracking-wider">Scroll</span>*/}
+          {/*<ChevronDown className="w-6 h-6 animate-bounce" />*/}
         </a>
       </div>
     </section>

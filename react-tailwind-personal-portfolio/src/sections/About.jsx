@@ -33,8 +33,8 @@ export const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">
-            <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+            <div className="animate-fade-in text-center">
+              <span className="text-secondary-foreground text-3xl font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>

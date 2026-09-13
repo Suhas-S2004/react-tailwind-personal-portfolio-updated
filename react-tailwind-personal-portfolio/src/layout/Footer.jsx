@@ -1,4 +1,4 @@
-import { Github, Linkedin, Heart } from "lucide-react";
+import { Github, Linkedin, ArrowUp } from "lucide-react";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/Suhas-S2004", label: "GitHub" },
@@ -7,7 +7,6 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/suhas-s-b246a0294/",
     label: "LinkedIn",
   },
-  //{ icon: Twitter, href: "#", label: "Twitter" },
 ];
 
 const footerLinks = [
@@ -20,18 +19,26 @@ const footerLinks = [
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
-          <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
-              SS<span className="text-primary">.</span>
-            </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Suhas S. All rights reserved.
-            </p>
+          <div className="text-center md:text-left flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full glass border border-primary/30 flex items-center justify-center font-bold text-primary shadow-[0_0_15px_rgba(32,178,166,0.3)]">
+              SS
+            </div>
+            <div>
+              <p className="font-semibold text-foreground tracking-wide">Suhas S</p>
+              <p className="text-sm text-muted-foreground">
+                © {currentYear} All rights reserved.
+              </p>
+            </div>
           </div>
 
           {/* Links */}
@@ -47,7 +54,7 @@ export const Footer = () => {
             ))}
           </nav>
 
-          {/* Social Links */}
+          {/* Social Links & Scroll to Top */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
               <a
@@ -59,6 +66,13 @@ export const Footer = () => {
                 <social.icon className="w-5 h-5" />
               </a>
             ))}
+            <button
+              onClick={scrollToTop}
+              className="p-3 rounded-full bg-primary text-background hover:opacity-90 transition-all duration-300 group cursor-pointer flex items-center justify-center shadow-[0_0_15px_rgba(32,178,166,0.5)]"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+            </button>
           </div>
         </div>
       </div>

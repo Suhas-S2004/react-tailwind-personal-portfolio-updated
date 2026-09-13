@@ -31,12 +31,16 @@ export const Navbar = () => {
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
-          href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
-        >
-          SS<span className="text-primary">.</span>
-        </a>
-
+  href="#"
+  className="flex items-center gap-3 group"
+>
+  <div className="w-10 h-10 rounded-full glass border border-primary/30 flex items-center justify-center font-bold text-primary shadow-[0_0_15px_rgba(32,178,166,0.3)] ">
+    SS
+  </div>
+  <span className="font-semibold text-foreground tracking-wide text-lg group-hover:text-primary transition-colors">
+    Suhas S
+  </span>
+</a>
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">

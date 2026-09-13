@@ -10,6 +10,7 @@ const projects = [
     link: "https://interviewiq-1client-1fal.onrender.com",
     github: "https://github.com/Suhas-S2004/InterviewIQ",
   },
+  /*
   {
     title: "Doctor Appointment Booking System",
     description:
@@ -19,11 +20,12 @@ const projects = [
     link: "https://prescripto-frontend-iota-ten.vercel.app/",
     github: "https://github.com/Suhas-S2004/Prescripto",
   },
+*/
   {
     title: "IoT-Based Automated Greenhouse Monitoring System",
     description:
       "An IoT-based automated greenhouse monitoring system integrating 5+ sensors and smart modules for real-time monitoring of temperature, humidity, soil moisture, and intrusion detection, with encrypted communication and remote device control.",
-    image: "/projects/project3.jpeg",
+    image: "/projects/project3.png",
     tags: ["ESP32", "Blynk Cloud", "Telegram Bot"],
     link: "https://drive.google.com/file/d/1fxf5AFnp7ui2pGLq915yowBwAHBLVicd/view?usp=sharing",
     github: null,
@@ -39,7 +41,7 @@ export const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="text-secondary-foreground text-3xl font-medium tracking-wider uppercase animate-fade-in">
             Featured Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
@@ -72,7 +74,7 @@ export const Projects = () => {
                 />
                 <div
                   className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
+                bg-gradient-to from-card via-card/50
                  to-transparent opacity-60"
                 />
                 {/* Overlay Links */}
