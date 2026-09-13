@@ -120,9 +120,13 @@ export const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md"
+                      className={
+                        project.github
+                          ? "flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md"
+                          : "p-2.5 rounded-xl bg-primary text-primary-foreground shadow-md inline-flex items-center justify-center"
+                      }
                     >
-                      <span>Live Demo</span>
+                      {project.github && <span>Live Demo</span>}
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                     {project.github && (
