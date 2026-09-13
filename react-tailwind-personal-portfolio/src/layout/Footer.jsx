@@ -28,17 +28,11 @@ export const Footer = () => {
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo & Copyright */}
-          <div className="text-center md:text-left flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full glass border border-primary/30 flex items-center justify-center font-bold text-primary shadow-[0_0_15px_rgba(32,178,166,0.3)]">
-              SS
-            </div>
-            <div>
-              <p className="font-semibold text-foreground tracking-wide">Suhas S</p>
-              <p className="text-sm text-muted-foreground">
-                © {currentYear} All rights reserved.
-              </p>
-            </div>
+          {/* Copyright only */}
+          <div className="text-center md:text-left">
+            <p className="text-sm text-muted-foreground">
+              © {currentYear} All rights reserved.
+            </p>
           </div>
 
           {/* Links */}
