@@ -33,9 +33,9 @@ const skillCategories = [
     skills: ["Git", "GitHub"],
   },
   {
-  title: "Design & Tools",
-  technologies: ["Figma", "Canva"],
-},
+    title: "DESIGN & TOOLS",
+    skills: ["Figma", "Canva"],
+  },
 ];
 
 export const Hero = () => {
@@ -169,7 +169,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Structured Skills Categories Box Section - Increased text and title sizes */}
+        {/* Structured Skills Categories Box Section */}
         <div className="mt-32 mb-8 animate-fade-in animation-delay-600 max-w-4xl mx-auto">
           <div className="glass rounded-2xl p-8 glow-border">
             <h3 className="text-lg font-bold text-foreground mb-10 text-center tracking-wide">
@@ -183,7 +183,7 @@ export const Hero = () => {
                     {category.title}
                   </h4>
                   <div className="flex flex-wrap gap-2.5">
-                    {category.skills.map((skill, sIdx) => (
+                    {category.skills?.map((skill, sIdx) => (
                       <span
                         key={sIdx}
                         className="px-4 py-2 rounded-lg bg-background/40 border border-white/5 text-base font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 shadow-sm"
