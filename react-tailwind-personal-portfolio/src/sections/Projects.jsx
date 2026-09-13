@@ -71,7 +71,7 @@ export const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 scale-110 group-hover:scale-100 md:group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 md:scale-110 md:group-hover:scale-100"
                 />
                 
                 <div
@@ -109,12 +109,12 @@ export const Projects = () => {
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-semibold md:group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                   </div>
 
-                  {/* Mobile Action Buttons (Placed right below title/description area) */}
+                  {/* Mobile Action Buttons */}
                   <div className="flex items-center gap-3 pt-3 md:hidden">
                     <a
                       href={project.link}
