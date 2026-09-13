@@ -32,6 +32,10 @@ const skillCategories = [
     title: "TOOLS & VERSION CONTROL",
     skills: ["Git", "GitHub"],
   },
+  {
+  title: "Design & Tools",
+  technologies: ["Figma", "Canva"],
+},
 ];
 
 export const Hero = () => {
