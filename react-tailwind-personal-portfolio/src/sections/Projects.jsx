@@ -74,30 +74,6 @@ export const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-700 scale-110 group-hover:scale-100 md:group-hover:scale-110"
                 />
                 
-                {/* Always-visible top-right quick action buttons for mobile */}
-                <div className="absolute top-3 right-3 flex items-center gap-2 md:hidden z-20">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View live project"
-                    className="p-2.5 rounded-full glass bg-black/60 text-white border border-white/20 shadow-md"
-                  >
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="View GitHub repository"
-                      className="p-2.5 rounded-full glass bg-black/60 text-white border border-white/20 shadow-md"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-
                 <div
                   className="absolute inset-0 
                 bg-gradient-to from-card via-card/50
@@ -136,14 +112,33 @@ export const Projects = () => {
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <ArrowUpRight
-                      className="w-5 h-5 
-                    text-muted-foreground group-hover:text-primary
-                      group-hover:translate-x-1 
-                      group-hover:-translate-y-1 transition-all"
-                    />
                   </div>
-                  <p className="text-muted-foreground text-sm mt-2">
+
+                  {/* Mobile Action Buttons (Placed right below title/description area) */}
+                  <div className="flex items-center gap-3 pt-3 md:hidden">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md"
+                    >
+                      <span>Live Demo</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-surface border border-border text-foreground text-sm font-medium shadow-md"
+                      >
+                        <Github className="w-4 h-4" />
+                        <span>Code</span>
+                      </a>
+                    )}
+                  </div>
+
+                  <p className="text-muted-foreground text-sm mt-3">
                     {project.description}
                   </p>
                 </div>
